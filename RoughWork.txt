@@ -22,12 +22,11 @@
 </html>
 
 
-> Things to vary:
-svg height
-svg width
-xlink:href
-text - y
-color of text [fill]
-font-family
-font-size
-font-style
+> Things to vary based on user input:
+svg height, text - y, font-size
+svg width - get from the length of input string * 16 -done
+xlink:href - user input is url no supplied, still create an svg but give a message like url no provided -done
+color of text [fill] - color picker
+font-family - drop down
+font-weight - drop down
+font-style - drop down

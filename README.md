@@ -17,3 +17,6 @@ Important Links:
 5. SVG Details
    1. https://www.w3schools.com/graphics/svg_text.asp
    2. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
+   3. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-weight
+   4. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size
+   5. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style

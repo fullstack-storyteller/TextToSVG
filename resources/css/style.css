@@ -47,7 +47,7 @@ section::after {
   display: block;
   background-color: #e67e22;
   content: ""; /*mandatory for using after psuedo class*/
-  margin: 30px auto 0 auto; /*top right bottom left*/
+  margin: 20px auto 0 auto; /*top right bottom left*/
   height: 3px;
   width: 75%;
 }

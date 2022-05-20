@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--<svg enable-background="new 0 0 48 48" height="16px" id="Layer_1" version="1.1"-->
+
+<!--width of single font is approximately 16 pixels to multiply it with the number of characters-->
+<!--svg height = y in text = size of the font like Arial, 16-->
+
+<svg height="15px"  version="1.1" width="176px" xml:space="preserve" 
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+    <a xlink:href="https://www.w3schools.com/graphics/" target="_blank">
+    <text x="0" y="15" fill="red" font-family="Arial" font-size="smaller" font-style="Italic">Click here!</text>
+    <!--y is like the thickness of the box in which letters are present-->
+  </a>
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+</body>
+</html>
+
+
+> Things to vary:
+svg height
+svg width
+xlink:href
+text - y
+color of text [fill]
+font-family
+font-size
+font-style

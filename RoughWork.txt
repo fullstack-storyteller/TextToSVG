@@ -22,6 +22,11 @@
 </html>
 
 
+Sample XML:
+
+
+
+
 > Things to vary based on user input:
 svg height, text - y, font-size
 svg width - get from the length of input string * 16 -done

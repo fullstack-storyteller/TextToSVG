@@ -26,12 +26,12 @@
     <header>
       <nav>
         <div class="row">
-          <h1>Text To SVG Encoding!</h1>
+          <h1>Text To SVG Encoding</h1>
         </div>
       </nav>
     </header>
     <section>
-      <form>
+      <form id="myform">
       <div class="row">
         <div class="col span-1-of-3">
           <label for="idTxtToEncode">Enter the Text to encode: </label>
@@ -48,7 +48,7 @@
       </div>
       <div class="row">
         <div class="col span-1-of-3">
-          <label for="idURLToEncode">Enter the URL to encode: </label>
+          <label for="idURLToEncode">Enter the URL to encode (optional): </label>
         </div>
         <div class="col span-2-of-3">
           <input type="url"
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col span-1-of-5"><label>Font Family:&nbsp;</label><br/><br/>
+        <div class="col span-1-of-4"><label>Font Family & Size:&nbsp;</label><br/><br/>
           <select name="font-family-dropdown" id="font-family-dropdown">
             <option selected>Arial</option>
             <option>Brush Script MT</option>
@@ -74,9 +74,7 @@
             <option>Papyrus</option>
             <option>Times New Roman</option>
             <option>Verdana</option>
-          </select>
-          </div>
-        <div class="col span-1-of-5"><label for="font-size-dropdown">Font Size:&nbsp;</label><br/><br/>
+          </select><br/><br/>
           <select name="font-size-dropdown" id="font-size-dropdown">
             <option>8</option>
             <option>9</option>
@@ -94,9 +92,28 @@
             <option>48</option>
             <option>72</option>
           </select>
-        </div>
+          </div>
+        <!-- <div class="col span-1-of-5"><label for="font-size-dropdown">Font Size:&nbsp;</label><br/><br/>
+          <select name="font-size-dropdown" id="font-size-dropdown">
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>12</option>
+            <option>14</option>
+            <option selected>16</option>
+            <option>18</option>
+            <option>20</option>
+            <option>22</option>
+            <option>24</option>
+            <option>26</option>
+            <option>28</option>
+            <option>36</option>
+            <option>48</option>
+            <option>72</option>
+          </select>
+        </div> -->
         
-        <div class="col span-1-of-5"><label for="font-weight-dropdown">Font Weight:&nbsp;</label><br/><br/>
+        <div class="col span-1-of-4"><label for="font-weight-dropdown">Font Weight:&nbsp;</label><br/><br/>
           <select name="font-weight-dropdown" id="font-weight-dropdown">
             
             <option value="bold">Bold</option>
@@ -105,6 +122,7 @@
             <option value="normal" selected>Normal</option>
             <option value="others">Numeric</option>
           </select>
+          <br/><br/>
           <select id="id-font-weight" name="id-font-weight">
             <option>100</option>
             <option>200</option>
@@ -116,9 +134,9 @@
             <option>800</option>
             <option>900</option>
           </select>
-          <!--divide by 100 (integer division) then multiply by 100 to get the exact weight. As 100, 200, 300, 400, 500, 600, 700, 800, 900 are only the valid weights-->
+          
         </div>
-        <div class="col span-1-of-5"><label for="font-style-dropdown">Font Style:&nbsp;</label><br/><br/>
+        <div class="col span-1-of-4"><label for="font-style-dropdown">Font Style:&nbsp;</label><br/><br/>
           <select name="font-style-dropdown" id="font-style-dropdown">
             <option value="italic" selected>Italic</option>
             <option value="normal">Normal</option>
@@ -126,10 +144,10 @@
             <option value="oblique">Oblique</option>
           </select>
         </div>
-        <div class="col span-1-of-5">
+        <div class="col span-1-of-4">
           <label for="favcolor">Font Color:&nbsp;</label>
           <br/><br/>
-          <input type="color" id="favcolor" name="favcolor" value="#ff0000"/>
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000"/><br/><br/>
           <span id="colorme" >#ff0000</span>
         </div>
       </div>
@@ -165,7 +183,7 @@
         <div class="col span-1-of-2">
           
             <textarea
-              placeholder="Output: Base 64"
+              placeholder="Output: Base 64 Data URL"
               name="txtEncoded"
               id="idTxtEncoded"
               class="txt-encoding"

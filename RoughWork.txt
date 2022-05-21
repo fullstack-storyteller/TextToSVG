@@ -35,3 +35,10 @@ color of text [fill] - color picker
 font-family - drop down
 font-weight - drop down
 font-style - drop down
+
+
+Pending item:
+
+3. Readme.md update
+4. Hosting on github
+5. Testing in decisions product.

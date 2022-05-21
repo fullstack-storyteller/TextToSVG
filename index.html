@@ -26,7 +26,7 @@
     <header>
       <nav>
         <div class="row">
-          <h1>Text To SVG Encoding</h1>
+          <h2>Text To SVG Encoding</h2>
         </div>
       </nav>
     </header>
@@ -43,6 +43,7 @@
             name="txtToEncode"
             id="idTxtToEncode"
             required
+            maxlength="500"
           ></input>
         </div>
       </div>
@@ -199,8 +200,20 @@
         </div>
       </div>
       <div class="row">
-        <div class="col span-1-of-5"><label for="testing">Testing Area: &nbsp;</label></div>
-        <div class="col span-4-of-5"><textarea id="testing" readonly>This is how it will look. Doesn't have to be a text area, it can simply be span or label of sorts. But it must show how the svg will look in a sentence. And the link should be clickable</textarea></div>
+        
+        <div class="col span-1-of-5">
+          
+          <label for="adjust-svg-width">Adjust SVG Width:</label><br/><br/>
+          <div class="tooltip">
+            <ion-icon name="help-circle-outline"></ion-icon>
+            <span class="tooltiptext">Adjust the width of SVG after encoding.</span>
+          </div>
+          <input type="number" id="adjust-svg-width" name="adjust-svg-width" max="8000" min="7" placeholder=" 7-8000 "/>
+        </div>
+        <div class="col span-4-of-5">
+          <label for="testing">Testing Area:&nbsp;</label><br/><br/>
+          <span id="testing"></span>
+        </div>
       </div>
     </form>
     </section>

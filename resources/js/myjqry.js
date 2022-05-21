@@ -3,21 +3,49 @@ $(document).ready(function () {
   function CopyValue(element) {
     navigator.clipboard.writeText(element.val());
   }
+  function GetLength(element) {
+    return element.val().length * 8;
+  }
 
   //update tooltip : hover and click
   function TooltipUpdate(element, message) {
     element.children[1].innerHTML = message;
   }
 
-  //function which does the encoding
-  function EncodeSVG() {
-    let svg_height = $("#font-size-dropdown").val();
-    //console.log($("#idTxtToEncode").val().length);
+  //Decorate an area
+  function DecorateMe(
+    element,
+    font_family,
+    font_size,
+    font_weight,
+    font_style,
+    font_color,
+    region_flag = "output"
+  ) {
+    element.css("font-family", font_family);
+    if (region_flag === "output") element.css("font-size", 12);
 
+    if (region_flag === "testing") {
+      //do things
+      element.css("font-size", font_size);
+      element.css("font-weight", font_weight);
+      element.css("font-style", font_style);
+      element.css("color", font_color);
+      return;
+    }
+    //code for output regions here
+  }
+
+  //function which does the encoding
+  function EncodeSVG(source = "main encode button") {
+    let svg_height = Number($("#font-size-dropdown").val());
+    //console.log($("#idTxtToEncode").val().length);
+    //console.log($("#adjust-svg-width").val());
+    let textlength = GetLength($("#idTxtToEncode"));
     let svg_width =
-      $("#idTxtToEncode").val().length * 16 === 0
-        ? 10
-        : $("#idTxtToEncode").val().length * 16; //average width of fonts
+      source == "main encode button"
+        ? textlength //.val().length * 7
+        : $("#adjust-svg-width").val();
 
     let svg_color = $("#favcolor").val();
 
@@ -62,12 +90,48 @@ $(document).ready(function () {
 
       variableTextinSVG = `<a xlink:href="${svg_link}" target="_blank">${variableTextinSVG}</a>`;
     }
-    let XML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="${svg_height}px"  version="1.1" width="${svg_width}px" viewBox="0 0 ${svg_width} ${svg_height}" style="enable-background:new 0 0 ${svg_width} ${svg_height}" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"	xmlns:xlink="http://www.w3.org/1999/xlink">${variableTextinSVG}Sorry, your browser does not support inline SVG!</svg>`;
+    let finalSVG = `<svg height="${svg_height}px"  version="1.1" width="${svg_width}px" viewBox="0 0 ${svg_width} ${svg_height}" style="enable-background:new 0 0 ${svg_width} ${svg_height}" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"	xmlns:xlink="http://www.w3.org/1999/xlink">${variableTextinSVG}Sorry, your browser does not support inline SVG!</svg>`;
+
+    let XML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>${finalSVG}`;
 
     $("#idXML")[0].innerHTML = XML;
 
     // convert to base 64 and assign to output
-    $("#idTxtEncoded")[0].innerHTML = `data:image/svg+xml;base64,${btoa(XML)}`;
+    let finalDataURL = `data:image/svg+xml;base64,${btoa(XML)}`;
+    $("#idTxtEncoded")[0].innerHTML = finalDataURL;
+    $("#testing")[0].innerHTML = `Your SVG: ${finalSVG} will look like me!`;
+
+    document.getElementById("adjust-svg-width").value = svg_width;
+    if (source == "main encode button")
+      $("#adjust-svg-width").css("display", "inline-block");
+
+    //Decorate stuff
+    DecorateMe(
+      $("#testing"),
+      svg_font_family,
+      svg_font_size,
+      svg_font_weight,
+      svg_font_style,
+      svg_color,
+      "testing"
+    );
+    $("#testing").css("display", "inline-block");
+    DecorateMe(
+      $("#idXML"),
+      "Lucida Console",
+      svg_font_size,
+      svg_font_weight,
+      svg_font_style,
+      svg_color
+    );
+    DecorateMe(
+      $("#idTxtEncoded"),
+      "Lucida Console",
+      svg_font_size,
+      svg_font_weight,
+      svg_font_style,
+      svg_color
+    );
   }
 
   //Tooltip handling
@@ -89,8 +153,9 @@ $(document).ready(function () {
   });
 
   //Color of svg image
-  $("#favcolor").focusout(function () {
+  $("#favcolor").change(function () {
     $("#colorme")[0].innerHTML = $("#favcolor").val();
+    //console.log($("#favcolor").val());
   });
 
   //font-weight drop down functon
@@ -102,9 +167,30 @@ $(document).ready(function () {
     $("#id-font-weight").css("display", "none");
   });
 
-  //$("#idBtnEncode").click(function () {
+  //submit form function
   $("#myform").submit(function (e) {
     e.preventDefault(); // to ensure the page doesn't refresh after clicking submit
     EncodeSVG();
+  });
+
+  //update SVG by adjust width
+  $("#adjust-svg-width").change(function () {
+    if (Number($("#adjust-svg-width").val()) == 0) {
+      document.getElementById("adjust-svg-width").value = GetLength(
+        $("#idTxtToEncode")
+      );
+      // $("#idTxtToEncode").val().length * 7;
+    }
+    EncodeSVG("adjust svg input");
+  });
+
+  $("#idTxtToEncode").change(function () {
+    $("#adjust-svg-width").css("display", "none");
+    $("#testing").css("display", "none");
+  });
+
+  $("#idURLToEncode").change(function () {
+    $("#adjust-svg-width").css("display", "none");
+    $("#testing").css("display", "none");
   });
 });

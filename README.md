@@ -2,6 +2,8 @@
 
 This is my attempt to create a web tool which will convert a given Text into a SVG file for use in various places. Later we can improve it further.
 
+Site is hosted on Github Pages: [https://fullstack-storyteller.github.io/TextToSVG/index.html](https://fullstack-storyteller.github.io/TextToSVG/index.html)
+
 ## Some command for your local setup
 
 1. Use `live-server` command from the Terminal in VS Code to run the server and see results in real time.

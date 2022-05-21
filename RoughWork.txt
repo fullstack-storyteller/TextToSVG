@@ -39,6 +39,7 @@ font-style - drop down
 
 Pending item:
 
-3. Readme.md update
-4. Hosting on github
-5. Testing in decisions product.
+1. Readme.md update
+2. Testing in decisions product.
+3. Fix the height issue as the letters like g y are not readable as they are cut off
+4. give an adjuster for height too, if possible.

@@ -26,163 +26,163 @@
     <header>
       <nav>
         <div class="row">
-          <h2>Text To SVG Encoder</h2>
+          <h1>Text To SVG Encoder</h1>
         </div>
       </nav>
     </header>
     <section>
       <form id="myform">
-      <div class="row">
-        <div class="col span-1-of-3">
-          <label for="idTxtToEncode">Enter the Text to encode: </label>
-        </div>
-        <div class="col span-2-of-3">
-          <input
-          type="text"
-            placeholder="Your Text here..."
-            name="txtToEncode"
-            id="idTxtToEncode"
-            required
-            maxlength="500"
-          ></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col span-1-of-3">
-          <label for="idURLToEncode">Enter the URL to encode (optional): </label>
-        </div>
-        <div class="col span-2-of-3">
-          <input type="url"
-            placeholder="Your URL here..."
-            name="urlToEncode"
-            id="idURLToEncode"
-          ></input>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col span-1-of-4"><label>Font Family & Size:&nbsp;</label><br/><br/>
-          <select name="font-family-dropdown" id="font-family-dropdown">
-            <option selected>Arial</option>
-            <option>Brush Script MT</option>
-            <option>Copperplate</option>
-            <option>Courier New</option>
-            <option>Garamond</option>
-            <option>Georgia</option>
-            <option>Helvetica</option>
-            <option>Lucida Console</option>
-            <option>Lucida Handwriting</option>
-            <option>Monaco</option>
-            <option>Papyrus</option>
-            <option>Times New Roman</option>
-            <option>Verdana</option>
-          </select><br/><br/>
-          <select name="font-size-dropdown" id="font-size-dropdown">
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>12</option>
-            <option>14</option>
-            <option selected>16</option>
-            <option>18</option>
-            <option>20</option>
-            <option>22</option>
-            <option>24</option>
-            <option>26</option>
-            <option>28</option>
-            <option>36</option>
-            <option>48</option>
-            <option>72</option>
-          </select>
+        <div class="row">
+          <div class="col span-1-of-3">
+            <label for="idTxtToEncode">Enter the Text to encode: </label>
           </div>
-        <!-- <div class="col span-1-of-5"><label for="font-size-dropdown">Font Size:&nbsp;</label><br/><br/>
-          <select name="font-size-dropdown" id="font-size-dropdown">
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>12</option>
-            <option>14</option>
-            <option selected>16</option>
-            <option>18</option>
-            <option>20</option>
-            <option>22</option>
-            <option>24</option>
-            <option>26</option>
-            <option>28</option>
-            <option>36</option>
-            <option>48</option>
-            <option>72</option>
-          </select>
-        </div> -->
-        
-        <div class="col span-1-of-4"><label for="font-weight-dropdown">Font Weight:&nbsp;</label><br/><br/>
-          <select name="font-weight-dropdown" id="font-weight-dropdown">
-            
-            <option value="bold">Bold</option>
-            <option value="bolder">Bolder</option>
-            <option value="lighter">Lighter</option>
-            <option value="normal" selected>Normal</option>
-            <option value="others">Numeric</option>
-          </select>
-          <br/><br/>
-          <select id="id-font-weight" name="id-font-weight">
-            <option>100</option>
-            <option>200</option>
-            <option>300</option>
-            <option selected>400</option>
-            <option>500</option>
-            <option>600</option>
-            <option>700</option>
-            <option>800</option>
-            <option>900</option>
-          </select>
-          
-        </div>
-        <div class="col span-1-of-4"><label for="font-style-dropdown">Font Style:&nbsp;</label><br/><br/>
-          <select name="font-style-dropdown" id="font-style-dropdown">
-            <option value="italic" selected>Italic</option>
-            <option value="normal">Normal</option>
-            
-            <option value="oblique">Oblique</option>
-          </select>
-        </div>
-        <div class="col span-1-of-4">
-          <label for="favcolor">Font Color:&nbsp;</label>
-          <br/><br/>
-          <input type="color" id="favcolor" name="favcolor" value="#0000EE"/><br/><br/>
-          <span id="colorme" >#0000ee</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col span-1-of-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div class="col span-1-of-2">
-          <input
-            type="submit"
-            name="btnEncode"
-            id="idBtnEncode"
-            value="Encode"
-          />
-        </div>
-      </div>
-<br/>
-      <div class="row">
-        <div class="col span-1-of-2">
-          <textarea
-            placeholder="Output: XML"
-            name="txtToEncode"
-            id="idXML"
-            class="txt-xml"
-            readonly
-          ></textarea>
-          
-          <div class="tooltip1">
-            <ion-icon name="clipboard" class="xml"></ion-icon>
-            <span class="tooltiptext"></span>
+          <div class="col span-2-of-3">
+            <input
+              type="text"
+              placeholder="Your Text here..."
+              name="txtToEncode"
+              id="idTxtToEncode"
+              required
+              maxlength="500"
+            />
           </div>
-          <br /><br/>
-          <label></label>
         </div>
-        <div class="col span-1-of-2">
-          
+        <div class="row">
+          <div class="col span-1-of-3">
+            <label for="idURLToEncode"
+              >Enter the URL to encode (optional):
+            </label>
+          </div>
+          <div class="col span-2-of-3">
+            <input
+              type="url"
+              placeholder="Your URL here..."
+              name="urlToEncode"
+              id="idURLToEncode"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col span-1-of-4">
+            <label>Font Family & Size:&nbsp;</label><br /><br />
+            <select name="font-family-dropdown" id="font-family-dropdown">
+              <option selected>Arial</option>
+              <option>Brush Script MT</option>
+              <option>Copperplate</option>
+              <option>Courier New</option>
+              <option>Garamond</option>
+              <option>Georgia</option>
+              <option>Helvetica</option>
+              <option>Lucida Console</option>
+              <option>Lucida Handwriting</option>
+              <option>Monaco</option>
+              <option>Papyrus</option>
+              <option>Times New Roman</option>
+              <option>Verdana</option></select
+            ><br /><br />
+            <select name="font-size-dropdown" id="font-size-dropdown">
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>12</option>
+              <option>14</option>
+              <option selected>16</option>
+              <option>18</option>
+              <option>20</option>
+              <option>22</option>
+              <option>24</option>
+              <option>26</option>
+              <option>28</option>
+              <option>36</option>
+              <option>48</option>
+              <option>72</option>
+            </select>
+          </div>
+
+          <div class="col span-1-of-4">
+            <label for="font-weight-dropdown">Font Weight:&nbsp;</label
+            ><br /><br />
+            <select name="font-weight-dropdown" id="font-weight-dropdown">
+              <option value="bold">Bold</option>
+              <option value="bolder">Bolder</option>
+              <option value="lighter">Lighter</option>
+              <option value="normal" selected>Normal</option>
+              <option value="others">Numeric</option>
+            </select>
+            <br /><br />
+            <select id="id-font-weight" name="id-font-weight">
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option selected>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+            </select>
+          </div>
+          <div class="col span-1-of-4">
+            <label for="font-style-dropdown">Font Style:&nbsp;</label
+            ><br /><br />
+            <select name="font-style-dropdown" id="font-style-dropdown">
+              <option value="italic" selected>Italic</option>
+              <option value="normal">Normal</option>
+
+              <option value="oblique">Oblique</option></select
+            ><br /><br />
+            <input
+              type="checkbox"
+              id="underline"
+              name="underline"
+              value="underline"
+              checked
+            /><span>&nbsp;&nbsp; Underlined?</span>
+          </div>
+          <div class="col span-1-of-4">
+            <label for="favcolor">Font Color:&nbsp;</label>
+            <br /><br />
+            <input
+              type="color"
+              id="favcolor"
+              name="favcolor"
+              value="#0000EE"
+            /><br /><br />
+            <span id="colorme">#0000ee</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col span-1-of-3">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="col span-1-of-2">
+            <input
+              type="submit"
+              name="btnEncode"
+              id="idBtnEncode"
+              value="Encode"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col span-1-of-2">
+            <textarea
+              placeholder="Output: XML"
+              name="txtToEncode"
+              id="idXML"
+              class="txt-xml"
+              readonly
+            ></textarea>
+
+            <div class="tooltip1">
+              <ion-icon name="clipboard" class="xml"></ion-icon>
+              <span class="tooltiptext"></span>
+            </div>
+            <br /><br />
+            <label></label>
+          </div>
+          <div class="col span-1-of-2">
             <textarea
               placeholder="Output: Base 64 Data URL"
               name="txtEncoded"
@@ -190,37 +190,46 @@
               class="txt-encoding"
               readonly
             ></textarea>
-            
+
             <div class="tooltip2">
               <ion-icon name="clipboard" class="encoding"></ion-icon>
               <span class="tooltiptext"></span>
             </div>
-          <br/><br/>
+            <br /><br />
           </div>
         </div>
-      </div>
-      <div class="row">
-        
-        <div class="col span-1-of-5">
-          
-          <label for="adjust-svg-width">Adjust SVG Width:</label><br/><br/>
-          <div class="tooltip">
-            <ion-icon name="help-circle-outline"></ion-icon>
-            <span class="tooltiptext">Adjust the width of SVG after encoding.</span>
+        <div class="row">
+          <div class="col span-1-of-5">
+            <label for="adjust-svg-width">Adjust SVG Width:</label><br /><br />
+            <div class="tooltip">
+              <ion-icon name="help-circle-outline"></ion-icon>
+              <span class="tooltiptext"
+                >Adjust the width of SVG after encoding.</span
+              >
+            </div>
+            <input
+              type="number"
+              id="adjust-svg-width"
+              name="adjust-svg-width"
+              max="1000"
+              min="8"
+              placeholder=" 8-1000 "
+            />
           </div>
-          <input type="number" id="adjust-svg-width" name="adjust-svg-width" max="1000" min="8" placeholder=" 8-1000 "/>
+          <div class="col span-4-of-5">
+            <label for="testing">Testing Area:&nbsp;</label><br /><br />
+            <span id="testing"></span>
+          </div>
         </div>
-        <div class="col span-4-of-5">
-          <label for="testing">Testing Area:&nbsp;</label><br/><br/>
-          <span id="testing"></span>
-        </div>
-      </div>
-    </form>
+      </form>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> -->
-    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
 
     <script src="resources/js/myjqry.js"></script>
   </body>

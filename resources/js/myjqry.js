@@ -1,10 +1,12 @@
 $(document).ready(function () {
+  const APPROX_WIDTH_OF_A_CHARACTER = 8;
+  const FACTOR_OF_LEVITATION = 4.5;
   //copy to clipboard
   function CopyValue(element) {
     navigator.clipboard.writeText(element.val());
   }
   function GetLength(element) {
-    return element.val().length * 8;
+    return element.val().length * APPROX_WIDTH_OF_A_CHARACTER;
   }
 
   //update tooltip : hover and click
@@ -45,7 +47,9 @@ $(document).ready(function () {
     let svg_height = Number($("#font-size-dropdown").val());
     //console.log($("#idTxtToEncode").val().length);
     //console.log($("#adjust-svg-width").val());
+
     let textlength = GetLength($("#idTxtToEncode"));
+
     let svg_width =
       source == "main encode button"
         ? textlength //.val().length * 7
@@ -86,7 +90,11 @@ $(document).ready(function () {
 
     svg_text = svg_text.replace(/["'<>&]/g, (m) => charactersToEscape[m]);
 
-    let variableTextinSVG = `<text text-decoration="underline" x="0" y="${svg_height}" fill="${svg_color}" font-family="${svg_font_family}" font-size="${svg_font_size}" font-style="${svg_font_style}" font-weight="${svg_font_weight}">${svg_text}</text>`;
+    let underline = $("#underline")[0].checked
+      ? `text-decoration="underline"`
+      : "";
+
+    let variableTextinSVG = `<text ${underline} x="0" y="${svg_height}" fill="${svg_color}" font-family="${svg_font_family}" font-size="${svg_font_size}" font-style="${svg_font_style}" font-weight="${svg_font_weight}">${svg_text}</text>`;
 
     if (!(svg_link === "" || svg_link.length === 0)) {
       // svg_link = svg_link.replace(/&/g, "&amp;");
@@ -95,7 +103,7 @@ $(document).ready(function () {
       variableTextinSVG = `<a xlink:href="${svg_link}" target="_blank">${variableTextinSVG}</a>`;
     }
     let finalSVG = `<svg preserveAspectRatio="xMidYMax meet" height="${svg_height}px"  version="1.1" width="${svg_width}px" viewBox="0 ${
-      svg_height / 4.5
+      svg_height / FACTOR_OF_LEVITATION
     } ${svg_width} ${svg_height}" style="enable-background:new 0 0 ${svg_width} ${svg_height}" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"	xmlns:xlink="http://www.w3.org/1999/xlink">${variableTextinSVG}Sorry, your browser does not support inline SVG!</svg>`;
 
     let XML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>${finalSVG}`;

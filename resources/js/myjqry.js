@@ -96,11 +96,20 @@ $(document).ready(function () {
 
     let variableTextinSVG = `<text ${underline} x="0" y="${svg_height}" fill="${svg_color}" font-family="${svg_font_family}" font-size="${svg_font_size}" font-style="${svg_font_style}" font-weight="${svg_font_weight}">${svg_text}</text>`;
 
+    if (source == "main encode button") {
+      $("#adjust-svg-width-div").css("display", "inline-block");
+      $("#adjust-svg-width").css("display", "inline-block");
+      $("#launch-behaviour-div").css("display", "inline-block");
+      $("#launch-behaviour")[0].checked = true;
+    }
+
     if (!(svg_link === "" || svg_link.length === 0)) {
       // svg_link = svg_link.replace(/&/g, "&amp;");
       svg_link = svg_link.replace(/["'<>&]/g, (m) => charactersToEscape[m]);
 
-      variableTextinSVG = `<a xlink:href="${svg_link}" target="_blank">${variableTextinSVG}</a>`;
+      variableTextinSVG = `<a xlink:href="${svg_link}" ${
+        $("#launch-behaviour")[0].checked ? 'target="_blank"' : ""
+      }>${variableTextinSVG}</a>`;
     }
     let finalSVG = `<svg preserveAspectRatio="xMidYMax meet" height="${svg_height}px"  version="1.1" width="${svg_width}px" viewBox="0 ${
       svg_height / FACTOR_OF_LEVITATION
@@ -116,8 +125,11 @@ $(document).ready(function () {
     $("#testing")[0].innerHTML = `Your SVG: ${finalSVG} will look like me!`;
 
     document.getElementById("adjust-svg-width").value = svg_width;
-    if (source == "main encode button")
+    if (source == "main encode button") {
       $("#adjust-svg-width").css("display", "inline-block");
+      $("#launch-behaviour-div").css("display", "inline-block");
+      $("#launch-behaviour")[0].checked = true;
+    }
 
     //Decorate stuff
     DecorateMe(
@@ -200,11 +212,19 @@ $(document).ready(function () {
 
   $("#idTxtToEncode").change(function () {
     $("#adjust-svg-width").css("display", "none");
+    $("#adjust-svg-width-div").css("display", "none");
     $("#testing").css("display", "none");
+    $("#launch-behaviour-div").css("display", "none");
   });
 
   $("#idURLToEncode").change(function () {
     $("#adjust-svg-width").css("display", "none");
+    $("#adjust-svg-width-div").css("display", "none");
     $("#testing").css("display", "none");
+    $("#launch-behaviour-div").css("display", "none");
+  });
+
+  $("#launch-behaviour").change(function () {
+    EncodeSVG("adjust svg input");
   });
 });

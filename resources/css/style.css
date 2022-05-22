@@ -153,6 +153,17 @@ input[type="text"] {
   width: 60%;
   height: 30px;
   display: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+#adjust-svg-width-div {
+  display: none;
+  width: 100%;
+}
+#launch-behaviour-div {
+  display: none;
 }
 #idTxtToEncode,
 #idURLToEncode,

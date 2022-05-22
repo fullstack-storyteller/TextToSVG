@@ -21,7 +21,7 @@ body {
   background-color: #fff;
   color: #555;
   font-family: "Lato", "Arial", sans-serif; /*Load LATO; if no internet load  Arial, if arial not present in user machine, load any san serif font*/
-  font-size: 20px; /*default*/
+  font-size: 16px;
   font-weight: 300; /*default*/
   text-rendering: optimizeLegibility;
   overflow-x: hidden;

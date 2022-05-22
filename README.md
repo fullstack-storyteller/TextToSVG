@@ -4,6 +4,20 @@ This is my attempt to create a web tool which will convert a given Text into a S
 
 Site is hosted on Github Pages: [https://fullstack-storyteller.github.io/TextToSVG/index.html](https://fullstack-storyteller.github.io/TextToSVG/index.html)
 
+## Usage Notes
+
+- Use in Either Latest version of Chrome or in Edge Vrowser for best experience.
+- Enter text to encode into SVG
+- Enter URL to encode into SVG (it is optional!)
+- Select the formatting of your text within SVG
+- Click on "Encode"
+- The Testing Area will show how the SVG will look within a line
+
+  - Since it is can't be determined the width fo a character of any font (However, the average is 16 pixels roughly), we are allowing user to adjust the SVG width mannually at the bottom left of the screen
+  - A user can also control wether the link encoded within the svg is launch the hyperlink is same tab or different tab.
+
+- The utility outputs the image darta url and also the svg xml to be used in various programming purposes.
+
 ## Some command for your local setup
 
 1. Use `live-server` command from the Terminal in VS Code to run the server and see results in real time.

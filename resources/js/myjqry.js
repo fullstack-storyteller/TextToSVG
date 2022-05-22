@@ -99,7 +99,9 @@ $(document).ready(function () {
     if (source == "main encode button") {
       $("#adjust-svg-width-div").css("display", "inline-block");
       $("#adjust-svg-width").css("display", "inline-block");
-      $("#launch-behaviour-div").css("display", "inline-block");
+      if (!(svg_link === "" || svg_link.length === 0)) {
+        $("#launch-behaviour-div").css("display", "inline-block");
+      }
       $("#launch-behaviour")[0].checked = true;
     }
 
@@ -125,11 +127,13 @@ $(document).ready(function () {
     $("#testing")[0].innerHTML = `Your SVG: ${finalSVG} will look like me!`;
 
     document.getElementById("adjust-svg-width").value = svg_width;
-    if (source == "main encode button") {
-      $("#adjust-svg-width").css("display", "inline-block");
-      $("#launch-behaviour-div").css("display", "inline-block");
-      $("#launch-behaviour")[0].checked = true;
-    }
+    // if (source == "main encode button") {
+    //   $("#adjust-svg-width").css("display", "inline-block");
+    //   if (!(svg_link === "" || svg_link.length === 0)) {
+    //     $("#launch-behaviour-div").css("display", "inline-block");
+    //   }
+    //   $("#launch-behaviour")[0].checked = true;
+    // }
 
     //Decorate stuff
     DecorateMe(

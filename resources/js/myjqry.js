@@ -4,7 +4,7 @@ $(document).ready(function () {
     navigator.clipboard.writeText(element.val());
   }
   function GetLength(element) {
-    return element.val().length * 8;
+    return element.val().length * 10;
   }
 
   //update tooltip : hover and click
@@ -90,7 +90,9 @@ $(document).ready(function () {
 
       variableTextinSVG = `<a xlink:href="${svg_link}" target="_blank">${variableTextinSVG}</a>`;
     }
-    let finalSVG = `<svg height="${svg_height}px"  version="1.1" width="${svg_width}px" viewBox="0 0 ${svg_width} ${svg_height}" style="enable-background:new 0 0 ${svg_width} ${svg_height}" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"	xmlns:xlink="http://www.w3.org/1999/xlink">${variableTextinSVG}Sorry, your browser does not support inline SVG!</svg>`;
+    let finalSVG = `<svg preserveAspectRatio="xMidYMax meet" height="${svg_height}px"  version="1.1" width="${svg_width}px" viewBox="0 ${
+      svg_height / 5
+    } ${svg_width} ${svg_height}" style="enable-background:new 0 0 ${svg_width} ${svg_height}" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"	xmlns:xlink="http://www.w3.org/1999/xlink">${variableTextinSVG}Sorry, your browser does not support inline SVG!</svg>`;
 
     let XML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>${finalSVG}`;
 

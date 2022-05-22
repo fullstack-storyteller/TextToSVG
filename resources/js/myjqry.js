@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     svg_text = svg_text.replace(/["'<>&]/g, (m) => charactersToEscape[m]);
 
-    let variableTextinSVG = `<text x="0" y="${svg_height}" fill="${svg_color}" font-family="${svg_font_family}" font-size="${svg_font_size}" font-style="${svg_font_style}" font-weight="${svg_font_weight}">${svg_text}</text>`;
+    let variableTextinSVG = `<text text-decoration="underline" x="0" y="${svg_height}" fill="${svg_color}" font-family="${svg_font_family}" font-size="${svg_font_size}" font-style="${svg_font_style}" font-weight="${svg_font_weight}">${svg_text}</text>`;
 
     if (!(svg_link === "" || svg_link.length === 0)) {
       // svg_link = svg_link.replace(/&/g, "&amp;");

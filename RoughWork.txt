@@ -36,8 +36,3 @@ font-family - drop down
 font-weight - drop down
 font-style - drop down
 
-
-Pending item:
-
-1. Readme.md update
-2. Testing in decisions product.

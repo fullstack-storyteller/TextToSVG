@@ -150,7 +150,7 @@ input[type="text"] {
 #adjust-svg-width {
   padding: 5px;
   border-radius: 5px;
-  width: 60%;
+  width: 70%;
   height: 30px;
   display: none;
   -webkit-border-radius: 5px;
@@ -206,4 +206,22 @@ input[type="text"] {
 .tooltip1:hover .tooltiptext,
 .tooltip2:hover .tooltiptext {
   visibility: visible;
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 767px) {
+  * {
+    font-size: 97%;
+  }
+  input[type="submit"] {
+    width: 150px;
+  }
+  section {
+    width: 95%;
+  }
+  #idXML,
+  #idTxtEncoded {
+    width: 100%;
+  }
 }

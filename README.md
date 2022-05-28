@@ -31,9 +31,12 @@ Important Links:
 3. Base64 to text: https://base64.guru/converter/decode/text
 4. XML Pretty Print: https://jsonformatter.org/xml-pretty-print
 5. SVG Details
+
    1. https://www.w3schools.com/graphics/svg_text.asp
    2. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
    3. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-weight
    4. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size
    5. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style
    6. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio
+
+6. Text to Base 64 conversion issue: https://stackoverflow.com/questions/23223718/failed-to-execute-btoa-on-window-the-string-to-be-encoded-contains-characte

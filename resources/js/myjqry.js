@@ -122,7 +122,11 @@ $(document).ready(function () {
     $("#idXML")[0].innerHTML = XML;
 
     // convert to base 64 and assign to output
-    let finalDataURL = `data:image/svg+xml;base64,${btoa(XML)}`;
+    let finalDataURL = `data:image/svg+xml;base64,${btoa(
+      XML.replace(/[\u00A0-\u2666]/g, function (c) {
+        return "&#" + c.charCodeAt(0) + ";";
+      })
+    )}`;
     $("#idTxtEncoded")[0].innerHTML = finalDataURL;
     $("#testing")[0].innerHTML = `Your SVG: ${finalSVG} will look like me!`;
 
